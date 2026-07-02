@@ -1,0 +1,4 @@
+yt-dlp==2026.3.20
+requests
+csv
+json
