@@ -1,0 +1,15 @@
+name: Youtube数据采集与AI分析
+on: workflow_dispatch
+jobs:
+  run_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 安装运行依赖
+        run: pip install -r requirements.txt
+      - name: 执行爬虫程序
+        run: python main.py
+      - name: 导出Excel表格
+        uses: actions/upload-artifact@v4
+        with:
+          path: youtube_result.csv
